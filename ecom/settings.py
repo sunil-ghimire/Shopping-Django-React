@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'api',
     'api.category',
     'api.product',
-    # 'api.category',
+    # 'api.user',
     # 'api.category',
 ]
 
@@ -138,6 +138,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTH_USER_MODEL = 'user.CustomUser'
 
 
 CORS_ALLOW_ALL_ORIGINS = True
