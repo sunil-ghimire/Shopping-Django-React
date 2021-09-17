@@ -41,13 +41,15 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'debug_toolbar',
+    
 
     #api app
     'api',
     'api.category',
     'api.product',
-    # 'api.user',
-    # 'api.category',
+    'api.user',
+    'api.order',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'ecom.urls'
@@ -139,7 +142,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTH_USER_MODEL = 'user.CustomUser'
+AUTH_USER_MODEL = 'user.CustomUser'
 
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -155,3 +158,6 @@ REST_FRAMEWORK = {
     ]
     
 }
+
+INTERNAL_IPS = ('127.0.0.1', '192.168.0.1','0.0.0.0')
+# DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False,}
